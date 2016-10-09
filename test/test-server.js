@@ -101,9 +101,6 @@ describe('Shopping List', function() {
      });
      });
     
-     
-     
-     
     });
     
     it('should edit an item on put', function(done) {
@@ -130,8 +127,6 @@ describe('Shopping List', function() {
      });
      
     });
-    
-    
     
     
 });
