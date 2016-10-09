@@ -101,8 +101,7 @@ describe('Shopping List', function() {
     var item = res.body[0];
     chai.request(app)
      .put('/items/' + item._id)
-     .send({ name: 'cake'
-     })
+     .send({'name': 'cake'})
      .end(function(err, res){
          should.equal(err, null);
          res.should.have.status(200);
