@@ -109,7 +109,7 @@ describe('Shopping List', function() {
          res.should.be.json;
          res.body.should.be.a('object');
          res.body.should.have.property('name'); 
-         res.body.should.have.property('id');
+         res.body.should.have.property('_id');
          res.body._id.should.be.a('string');
          res.body.name.should.be.a('string');
          res.body.name.should.equal('cake');
