@@ -100,7 +100,7 @@ describe('Shopping List', function() {
         }
     var item = res.body[0];
     chai.request(app)
-     .put('/items' + item._id)
+     .put('/items/' + item._id)
      .send({ name: 'cake'
      })
      .end(function(err, res){
