@@ -13,19 +13,6 @@ chai.use(chaiHttp);
 
 describe('Shopping List', function() {
     
-//     beforeEach(function(done) {
-//         Item.remove(function(){
-//             done();
-//         });
-        
-//         Item.create({name: 'Broad beans'},
-//                     {name: 'Tomatoes'},
-//                     {name: 'Peppers'}, function() {
-//                         done();
-//                     });
-        
-// });
-    
     before(function(done) {
         server.runServer(function() {
             Item.create({name: 'Broad beans'},
@@ -83,6 +70,9 @@ describe('Shopping List', function() {
             
  it('should delete an item on delete', function(done){
      chai.request(app).get('/items').end(function(err, res){
+         if (err) {
+            console.log(err);
+        }
          var item = res.body[0];
           chai.request(app)
      .delete('/items/' + item._id)
@@ -105,6 +95,9 @@ describe('Shopping List', function() {
     
     it('should edit an item on put', function(done) {
     chai.request(app).get('/items').end(function(err, res){
+        if (err) {
+            console.log(err);
+        }
     var item = res.body[0];
     chai.request(app)
      .put('/items' + item._id)
