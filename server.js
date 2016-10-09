@@ -62,16 +62,12 @@ app.post('/items', function(req, res) {
     
 });
 
-app.use('*', function(req, res) {
-    res.status(404).json({
-        message: 'Not Found'
-    });
-});
 
 app.delete('/items/:id', function(req, res){
-    Item.remove({
-        id: req.params.id
+    Item.findOneAndRemove({
+        _id: req.params.id
     }, function(err, item) {
+        console.log(err);
         if (err) {
             return res.status(500).json({
                 message: 'Internal Server Error'
@@ -88,11 +84,13 @@ app.delete('/items/:id', function(req, res){
 
 
 app.put('/items/:id', function(req, res){
-    Item.update({
-        name: req.body.name,
-        id: req.params.id
+    Item.findOneAndUpdate({
+        _id: req.params.id
+        
+    }, { name: req.body.name
         
     }, function(err, item) {
+        console.log(err);
         if (err) {
             return res.status(500).json({
                 message: 'Internal Server Error'
@@ -101,10 +99,15 @@ app.put('/items/:id', function(req, res){
         res.status(200).json(item);
     }); 
     
-    
     // var item = storage.edit(+request.params.id, request.body.name);
     
   
+});
+
+app.use('*', function(req, res) {
+    res.status(404).json({
+        message: 'Not Found'
+    });
 });
 
 
