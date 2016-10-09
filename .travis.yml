@@ -8,3 +8,10 @@ addons:
     - mongodb-3.2-precise
     packages:
     - mongodb-org-server
+deploy:
+  provider: heroku
+  api_key:
+    secure: wh9LKjbkp4+o3MmoMD1DFtxrPqOxMID0Rj+rddik7pUwQgRG21MEVaUpw6PNaOKvpPIlozDOikXEwS90//5ukWqyvyhYBBUaLDzt8zeWBgG9roFugSEDnN6QLNjJZCPA82b+G1Sz5SXyCkhbMLDa6DVnbIz8+Z96O9V13+3zp7mf4ieCQTOZJcdLA3i7xraIy90sRqdZ4X/9l1fqdbUvXF6fjkSahVKy8Z2SQHWKQ+O5QyaUNAWgQu7xRgqozDB449b1KsdPScG7uJSotEDBmTy+NVBfRmnfpTKHkSM1hVoxhzKL9oaT9EAyRskpXwMKUSLyVV78TEhHd+lcYW86KtZmX3gn2lAFLnrCe+eU95Bfp0xDICiNcxJTmBuWiIdBjNE4fADBeJxMJAVIOqKqISZPQlcddaFo2sS/yh0sNUENr9o1dG3D39QuMy79Vdk8U7SLByJGrp6KtFpfjpvcKMHhTRU30brIDpkDTsR6AuBHgY/+HP80uihbuqLX495AVM7nhMG7fvKl12UULiKDxbrlBS1Pcp6QYlZo0v6Xo65VwCapjdXGXUysyGIX2m/xVKkojyht6MyUwklBNlmmcHh+nUTv5E7BZoMxAI62Ns6g1u4saafvKostxMvtfjG5kXQj0L4fImmmfdIr98JEOW83zUJNu2GdRL1uk5zDnbs=
+  app: tranquil-stream-69054
+  on:
+    repo: smitherd9/mongo-shopping-list
