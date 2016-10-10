@@ -77,9 +77,6 @@ app.delete('/items/:id', function(req, res){
     }); 
     
     
-    
-    // storage.delete(request.params.id);
-    
 });
 
 
@@ -99,7 +96,7 @@ app.put('/items/:id', function(req, res){
         res.status(200).json(item);
     }); 
     
-    // var item = storage.edit(+request.params.id, request.body.name);
+    
     
   
 });

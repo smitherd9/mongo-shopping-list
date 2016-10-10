@@ -18,15 +18,17 @@ describe('Shopping List', function() {
             Item.create({name: 'Broad beans'},
                         {name: 'Tomatoes'},
                         {name: 'Peppers'}, function() {
-                done();
+                // done();
             });
         });
+        done();
     });
 
     after(function(done) {
         Item.remove(function() {
-            done();
+            // done();
         });
+        done();
     });
     
     it('should list items on GET', function(done) {
@@ -46,8 +48,9 @@ describe('Shopping List', function() {
                 res.body[0].name.should.equal('Broad beans');
                 res.body[1].name.should.equal('Tomatoes');
                 res.body[2].name.should.equal('Peppers');
-                done();
+                // done();
             });
+            done();
     });
    
     
@@ -64,8 +67,9 @@ describe('Shopping List', function() {
                 res.body.should.have.property('name');
                 res.body.name.should.be.a('string');
                 res.body.name.should.equal('Kale');
-                done();
+                // done();
             });
+            done();
         });
             
  it('should delete an item on delete', function(done){
@@ -87,10 +91,10 @@ describe('Shopping List', function() {
          res.body._id.should.be.a('string');
          res.body.name.should.be.a('string');
          res.body._id.should.equal(item._id);
-         done();
+        //  done();
      });
      });
-    
+    done();
     });
     
     it('should edit an item on put', function(done) {
@@ -113,11 +117,11 @@ describe('Shopping List', function() {
          res.body.name.should.be.a('string');
          res.body.name.should.equal('cake');
          res.body._id.should.equal(item._id);
-         done();
+        //  done();
              
          });
      });
-     
+     done();
     });
     
     
